@@ -1,34 +1,43 @@
-## Project Description
+## Simple Weather App
 
 This project is my first time using APIs. It grabs the user's location from their IP address and displays the weather there.
 
-## Installation
+# Getting Started
 
 To run this project, follow these steps:
 
 1. Clone the repository to your local machine.
-2. Open the terminal and navigate to the project directory.
-3. Install the necessary dependencies by running the command `npm install`.
-4. Start the application by running the command `npm start`.
-5. Open your web browser and visit `http://localhost:3000`.
+2. Open the index.html file in a web browser.
+   
+# Usage
 
-## Technologies Used
-
-This project was built using the following technologies:
+Upon opening the web page, the project will automatically fetch the user's location and display the corresponding weather information.
+Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-- Weather API
+  
+# API Usage
 
-## Usage
+This project utilizes the WeatherAPI to fetch weather data. It makes use of the following endpoints:
 
-To use this project, simply open the application in your web browser. The application will automatically detect your location based on your IP address and display the current weather information for that location.
+- http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip
 
-## Contributing
+# Project Features
 
-Contributions are welcome! If you have any suggestions or improvements, please open an issue or submit a pull request.
+- Fetches the user's location based on their IP address.
+- Displays the current weather information for the user's location.
 
-## License
+# Future Enhancements
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+- Add more detailed weather information, such as humidity and wind speed.
+- Implement a search functionality to allow users to search for weather information in different locations.
+
+# Acknowledgements
+
+This project was created as a learning experience for working with APIs. Special thanks to the WeatherAPI for providing the weather data.
+
+# License
+
+This project is licensed under the MIT License.
