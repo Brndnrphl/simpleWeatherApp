@@ -33,6 +33,7 @@ This project utilizes the WeatherAPI to fetch weather data. It makes use of the 
 
 - Add more detailed weather information, such as humidity and wind speed.
 - Implement a search functionality to allow users to search for weather information in different locations.
+- Switching to the Open Weather API for better weather icons
 
 ## Acknowledgements
 
