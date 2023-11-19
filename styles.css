@@ -30,6 +30,51 @@ body {
 
 .location {
   margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.locationText,
+.location {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.locationText {
+  border: none;
+  background: rgb(240, 241, 240);
+  outline: none;
+  font-size: 28px;
+  font-weight: bold;
+  width: 200px;
+  margin: 0;
+  flex-shrink: 1;
+}
+
+.header form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.location,
+.search {
+  min-width: 25px; /* Adjust the value as needed */
+  flex-shrink: 0;
+}
+
+.search {
+  font-size: 24px;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: rgb(240, 241, 240);
+  border-width: 0;
+  margin-left: auto;
+}
+
+.search:hover {
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
 }
 
 .weather {
