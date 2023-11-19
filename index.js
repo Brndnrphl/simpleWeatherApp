@@ -1,37 +1,46 @@
-const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
-const apiKey = "11fe79405abd4d7084a95417231611";
-const currentWeatherUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip`;
-
+const apiKey = "90beb9da989dd815229f8351c86f04e4";
 // HTML Elements
 const locationText = document.querySelector(".locationText");
 const conditionText = document.querySelector(".weatherText");
 const tempText = document.querySelector(".celsius");
 const time = document.querySelector(".time");
-const weatherImage = document.querySelector(".weatherImage");
+const conditionIcon = document.querySelector(".conditionIcon");
+const textHumidity = document.querySelector(".textHumidity");
+const textWindSpeed = document.querySelector(".textWindSpeed");
 
-async function fetchData(url) {
+async function getData() {
   try {
-    const response = await fetch(url);
-    const data = await response.json();
+    let locationResponse = await fetch("http://ip-api.com/json/");
+    let locationData = await locationResponse.json();
+    const lat = locationData.lat;
+    const lon = locationData.lon;
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    let promisedData = await fetch(weatherUrl);
+    let data = await promisedData.json();
     console.log(data);
     return data;
   } catch (error) {
-    console.error(error);
-    throw error;
+    console.error("Error fetching data: ", error);
   }
 }
 
-async function getData() {
-  let data = await fetchData(currentWeatherUrl);
-  locationText.innerText = data.location.name;
-  conditionText.innerText = data.current.condition.text;
-  tempText.innerText = data.current.temp_c;
-  time.innerText = data.location.localtime;
-  weatherImage.src = `https:${data.current.condition.icon}`.replace(
-    "64x64",
-    "128x128"
-  );
-  document.querySelector(".container").style.visibility = "visible";
+async function updatePage() {
+  try {
+    let data = await getData();
+    locationText.innerText = data.name;
+    conditionText.innerText = data.weather[0].main;
+    tempText.innerText = data.main.temp;
+    textHumidity.innerText = `${data.main.humidity}%`;
+    textWindSpeed.innerText = `${data.wind.speed} m/s`;
+    conditionIcon.classList.replace(
+      "wi-owm-000",
+      `wi-owm-${data.weather[0].id}`
+    );
+
+    document.querySelector(".container").style.visibility = "visible";
+  } catch (error) {
+    console.error("Error updating page: ", error);
+  }
 }
 
-getData();
+updatePage();
