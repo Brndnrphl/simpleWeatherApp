@@ -1,6 +1,6 @@
 # Simple Weather App
 
-This project is my first time using APIs. It grabs the user's location from their IP address and displays the weather there.
+This project is a weather application that fetches the user's location based on their IP address and displays the current weather information for that location. It uses the OpenWeatherMap API to fetch the weather data and displays it on a simple and intuitive interface.
 
 ## Getting Started
 
@@ -12,7 +12,8 @@ To run this project, follow these steps:
 ## Usage
 
 Upon opening the web page, the project will automatically fetch the user's location and display the corresponding weather information.
-Technologies Used
+
+Technologies Used:
 
 - HTML
 - CSS
@@ -20,24 +21,23 @@ Technologies Used
 
 ## API Usage
 
-This project utilizes the WeatherAPI to fetch weather data. It makes use of the following endpoints:
+This project utilizes the OpenWeatherMap API to fetch weather data. It makes use of the following endpoints:
 
-- http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=auto:ip
+- `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
 
 ## Project Features
 
 - Fetches the user's location based on their IP address.
 - Displays the current weather information for the user's location.
+- Displays additional weather information such as humidity and wind speed.
 
 ## Future Enhancements
 
-- Add more detailed weather information, such as humidity and wind speed.
 - Implement a search functionality to allow users to search for weather information in different locations.
-- Switching to the Open Weather API for better weather icons
 
 ## Acknowledgements
 
-This project was created as a learning experience for working with APIs. Special thanks to the WeatherAPI for providing the weather data.
+This project was created as a learning experience for working with APIs. Special thanks to the OpenWeatherMap API for providing the weather data.
 
 ## License
 
