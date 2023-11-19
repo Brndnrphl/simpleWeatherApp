@@ -24,7 +24,7 @@ body {
   padding: 20px;
   border-radius: 20px;
   width: 400px;
-  height: 500px;
+  min-height: 500px;
   visibility: hidden;
 }
 
@@ -54,10 +54,41 @@ body {
 
 .weatherText {
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .degree {
   font-size: 0.4em;
   position: relative;
   top: -0.5em;
+}
+
+.conditionIcon {
+  font-size: 90px;
+  margin: 70px;
+}
+
+.humidityWind {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  margin: 14px;
+}
+
+.humidityIcon,
+.windIcon {
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.humidityInfo,
+.windInfo {
+  display: flex;
+  align-items: center;
+}
+
+.textHumidity,
+.textWindSpeed {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
