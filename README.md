@@ -33,7 +33,7 @@ This project utilizes the OpenWeatherMap API to fetch weather data. It makes use
 
 ## Future Enhancements
 
-- Implement a search functionality to allow users to search for weather information in different locations.
+- Implement a feature where if a user clicks on the location icon it will instead use their current location through ip address
 
 ## Acknowledgements
 

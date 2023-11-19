@@ -50,7 +50,9 @@ async function updatePage(data) {
     );
     document.querySelector(".container").style.visibility = "visible";
   } catch (error) {
+    locationText.value = "Invalid!";
     console.error("Error updating page: ", error);
+    return null;
   }
 }
 
